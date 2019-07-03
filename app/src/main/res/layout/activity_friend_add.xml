@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:paddingBottom="16dp"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".activity.FriendAddActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal">
+        <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dip"
+                android:layout_height="40dip"
+                android:layout_weight="3"
+                android:hint="请输入您要搜索的用户名"
+                android:background="#CCC"
+                android:maxLines="1"
+                android:textStyle="bold"
+                tools:ignore="Suspicious0dp"/>
+
+
+        <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:text="搜索"
+                android:onClick="search"/>
+    </LinearLayout>
+
+    <ListView android:id="@+id/lv_results" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+</LinearLayout>

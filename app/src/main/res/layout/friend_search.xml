@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/resultListView"
+                android:layout_width="match_parent"
+                android:layout_height="40dip">
+    <!--<ImageView android:layout_width="30dip" android:layout_height="30dip"
+               android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+               android:layout_marginLeft="5dip" android:background="@drawable/searchBoy"/>-->
+    <TextView android:id="@+id/tv_name" android:layout_width="200dip"
+              android:layout_height="200dip" android:layout_marginLeft="7dip"
+              android:layout_marginTop="8dip" android:text="" android:textColor="#000"/>
+</RelativeLayout>
