@@ -37,6 +37,7 @@ public class ConnectionManager {
             builder.setPort(port)
                     .setXmppDomain(domain)
                     .setHostAddress(InetAddress.getByName(host))
+                    .setResource("im")
                     .setSecurityMode(ConnectionConfiguration.SecurityMode.disabled)
                     .enableDefaultDebugger();
             connection = new XMPPTCPConnection(builder.build()).connect();

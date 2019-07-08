@@ -2,7 +2,6 @@ package com.kenji.im.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +29,7 @@ public class FriendAddActivity extends Activity implements AdapterView.OnItemCli
 
 
     private EditText et_search;
-    private AbstractXMPPConnection connection = ConnectionManager.getConnection();
+    private AbstractXMPPConnection connection;
     private ListView lv_results;
     private ArrayAdapter<CharSequence> adapter;
 
@@ -39,6 +38,8 @@ public class FriendAddActivity extends Activity implements AdapterView.OnItemCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_add);
+        connection = ConnectionManager.getConnection();
+
         et_search = findViewById(R.id.et_search);
         lv_results = findViewById(R.id.lv_results);
         lv_results.setOnItemClickListener(this);
@@ -57,9 +58,7 @@ public class FriendAddActivity extends Activity implements AdapterView.OnItemCli
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("添加好友");
             builder.setMessage("确定添加" + name + "为好友吗");
-            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            builder.setPositiveButton("确定", (dialog, which) -> {
 //                    Presence presence = new Presence(Presence.Type.subscribe);
 //                    presence.setTo(addToJid);
 //                    try {
@@ -68,15 +67,11 @@ public class FriendAddActivity extends Activity implements AdapterView.OnItemCli
 //                        e.printStackTrace();
 //
 //                    }
-                    //添加好友
-                    RosterManager.getInstance(connection).addEntry(addToJid, name, "我的好友");
-                }
+                //添加好友
+                RosterManager.getInstance(connection).addEntry(addToJid, name, "我的好友");
             });
-            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            builder.setNegativeButton("取消", (dialog, which) -> {
 
-                }
             });
             AlertDialog dialog = builder.create();
             dialog.show();
