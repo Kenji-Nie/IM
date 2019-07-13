@@ -4,6 +4,9 @@ import org.jivesoftware.smack.AbstractXMPPConnection;
 import org.jivesoftware.smack.roster.Roster;
 import org.jxmpp.jid.BareJid;
 
+/**
+ * 好友管理器
+ */
 public class RosterManager {
     private static RosterManager instance;
     private Roster roster;

@@ -32,6 +32,9 @@
         <activity android:name=".activity.FriendActivity"/>
         <activity android:name=".activity.FriendAddActivity"/>
         <activity android:name=".activity.ChatActivity"/>
+        <activity android:name=".activity.ChatRoomOperateActivity"/>
+        <activity android:name=".activity.ChatRoomCreateActivity"/>
+        <activity android:name=".activity.ChatRoomJoinActivity"/>
 
         <activity android:name=".activity.MainActivity"/>
     </application>

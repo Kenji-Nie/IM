@@ -36,6 +36,7 @@ public class FriendActivity extends AppCompatActivity implements RosterListener,
     private FriendsExpandableListAdapter adapter;
 
     private static final int MENU_ADD_FRIEND = 1;
+    private static final int MENU_CHATROOM_OPERATE = 2;
 
     private static final int MESSAGE_ALERT_REQUEST_FRIEND = 1;
 
@@ -101,6 +102,7 @@ public class FriendActivity extends AppCompatActivity implements RosterListener,
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(1, MENU_ADD_FRIEND, 1, "添加好友");
+        menu.add(2, MENU_CHATROOM_OPERATE, 2, "群聊一会");
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -108,8 +110,12 @@ public class FriendActivity extends AppCompatActivity implements RosterListener,
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ADD_FRIEND:
-                Intent intent = new Intent(this, FriendAddActivity.class);
-                startActivity(intent);
+                Intent intentAF = new Intent(this, FriendAddActivity.class);
+                startActivity(intentAF);
+                break;
+            case MENU_CHATROOM_OPERATE:
+                Intent intentCO = new Intent(this, ChatRoomOperateActivity.class);
+                startActivity(intentCO);
                 break;
         }
         return super.onOptionsItemSelected(item);

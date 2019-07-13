@@ -63,11 +63,13 @@ public class ChatActivity extends Activity implements IncomingChatMessageListene
         setContentView(R.layout.activity_chat);
         connection = ConnectionManager.getConnection();
 
+        //消息列表
         et_msg = findViewById(R.id.et_msg);
         ListView lv_msgs = findViewById(R.id.lv_msgs);
         adapter = new MsgsListAdapter(this, messageList);
         lv_msgs.setAdapter(adapter);
 
+        //录音按键
         RecordButton recordButton = findViewById(R.id.btn_record);
         recordButton.setOnRecordFinishedListener(this);
 
